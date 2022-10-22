@@ -1,9 +1,8 @@
-import { Button, Navbar, Text, Link } from "@nextui-org/react";
-import type { NextPage } from "next";
-import { Layout } from "../components/Layout";
-import { Logo } from "../components/Logo";
+import { Navbar, Button, Link, Text } from "@nextui-org/react";
+import { Layout } from "./Layout";
+import { Logo } from "./Logo";
 
-const Home: NextPage = () => {
+export default function App() {
   const collapseItems = [
     "Features",
     "Customers",
@@ -45,7 +44,7 @@ const Home: NextPage = () => {
           </Navbar.Item>
         </Navbar.Content>
         <Navbar.Collapse>
-          {collapseItems.map((item) => (
+          {collapseItems.map((item, index) => (
             <Navbar.CollapseItem key={item}>
               <Link
                 color="inherit"
@@ -62,6 +61,4 @@ const Home: NextPage = () => {
       </Navbar>
     </Layout>
   );
-};
-
-export default Home;
+}
