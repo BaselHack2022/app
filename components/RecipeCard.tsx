@@ -32,6 +32,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
         width="100%"
         height={150}
         alt={recipe.name}
+        showSkeleton
       />
     </Card>
   );

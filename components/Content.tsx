@@ -165,7 +165,7 @@ export const Content = () => {
                       fontSize: "$sm",
                     }}
                   >
-                    {item.kcal} kcal
+                    12x
                   </Text>
                 </Row>
               </Card.Footer>
@@ -185,7 +185,7 @@ export const Content = () => {
           <Grid.Container justify="center" gap={1}>
             <Grid xs={6}>
               <Text size={18} weight="bold" css={{ verticalAlign: "middle" }}>
-                {selected.length} selected
+                {selected.length} ausgewählt
               </Text>
             </Grid>
             <Grid xs={6}>
@@ -196,7 +196,7 @@ export const Content = () => {
                 style={{ width: "100%" }}
                 onPress={() => handleSubmit()}
               >
-                Go
+                Suchen
               </Button>
             </Grid>
           </Grid.Container>
@@ -213,7 +213,7 @@ export const Content = () => {
       >
         <Modal.Header>
           <Text id="modal-name" size={18}>
-            Recommended Recipes
+            Empfohlene Rezepte
           </Text>
         </Modal.Header>
         <Modal.Body>
@@ -227,7 +227,7 @@ export const Content = () => {
         </Modal.Body>
         <Modal.Footer>
           <Button flat auto color="error" onClick={() => setVisible(false)}>
-            Close
+            Schliessen
           </Button>
         </Modal.Footer>
       </Modal>

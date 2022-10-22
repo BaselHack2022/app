@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Grid, Input, Table } from "@nextui-org/react";
+import { Button, Grid, Input, Table } from "@nextui-org/react";
 import { Ingredient } from "../models/ingredient";
 
 export interface IngredientsTableProps {
@@ -14,15 +14,7 @@ const IngredientsTable: React.FC<IngredientsTableProps> = ({
   const [persons, setPersons] = useState<number>(p);
 
   return (
-    <Grid.Container gap={2}>
-      <Grid xs={12}>
-        <Input
-          label="Personen"
-          type="number"
-          placeholder={persons.toString()}
-          onInput={(e) => setPersons(Number(e.currentTarget.value))}
-        />
-      </Grid>
+    <Grid.Container gap={1}>
       <Grid xs={12}>
         <Table
           css={{
@@ -31,8 +23,12 @@ const IngredientsTable: React.FC<IngredientsTableProps> = ({
           }}
         >
           <Table.Header>
-            <Table.Column>Anzahl</Table.Column>
-            <Table.Column>Zutat</Table.Column>
+            <Table.Column>
+              <Grid.Container>
+                <Grid>Anzahl</Grid>
+              </Grid.Container>
+            </Table.Column>
+            <Table.Column>Zutaten</Table.Column>
           </Table.Header>
           <Table.Body>
             {ingredients.map((ingredient) => (
