@@ -20,6 +20,7 @@ const RecipeDetails: NextPage = () => {
           name: "Orange",
           image: "/images/fruit-1.jpeg",
           kcal: 30,
+          stock: 12,
         },
       },
     ],

@@ -1,7 +1,9 @@
-import React from "react";
 import { Card, Col, Text } from "@nextui-org/react";
-import { Recipe } from "../models/recipe";
+import { promises as fs } from "fs";
 import { useRouter } from "next/router";
+import path from "path";
+import React from "react";
+import { Recipe } from "../models/recipe";
 
 export interface RecipeCardProps {
   recipe: Recipe;
@@ -9,6 +11,7 @@ export interface RecipeCardProps {
 
 const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
   const router = useRouter();
+
   return (
     <Card
       isPressable

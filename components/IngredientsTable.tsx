@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Grid, Input, Table } from "@nextui-org/react";
+import { Button, Grid, Input, Table, Link } from "@nextui-org/react";
 import { Ingredient } from "../models/ingredient";
 
 export interface IngredientsTableProps {
@@ -34,7 +34,18 @@ const IngredientsTable: React.FC<IngredientsTableProps> = ({
             {ingredients.map((ingredient) => (
               <Table.Row key={ingredient.ingredient.id}>
                 <Table.Cell>{(ingredient.quantity / p) * persons}x</Table.Cell>
-                <Table.Cell>{ingredient.ingredient.name}</Table.Cell>
+                <Table.Cell>
+                  <Link
+                    href={
+                      "https://www.coop.ch/de/search/?text=" +
+                      ingredient.ingredient.name
+                    }
+                    isExternal
+                    target={"_blank"}
+                  >
+                    {ingredient.ingredient.name}
+                  </Link>
+                </Table.Cell>
               </Table.Row>
             ))}
           </Table.Body>
