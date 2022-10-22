@@ -21,6 +21,6 @@ export default async function handler(
     res.json(objData)
     
   } else {
-    res.status(405)
+    res.status(405).send("METHOD NOT ALLOWED")
   }
 }
