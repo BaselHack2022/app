@@ -4,19 +4,19 @@ import {
   Container,
   Grid,
   Input,
-  Modal,
-  Row,
   Spacer,
   Text,
-  Image,
   useModal,
 } from "@nextui-org/react";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Ingredient } from "../models/ingredient";
 import { Recipe } from "../models/recipe";
-import RecipeCard from "./RecipeCard";
+import IngredientCard from "./IngredientCard";
+import RecipesModal from "./RecipesModal";
 
 export const Content = () => {
+  const router = useRouter();
   const [ingredients, setIngredients] = useState<Ingredient[]>([]);
   useEffect(() => {
     fetch("/api/ingredients").then((res) => {
@@ -69,8 +69,14 @@ export const Content = () => {
       .then((data) => {
         setRecommendedRecipes(data);
         setVisible(true);
+
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000);
       });
   };
+
+  const [isLoading, setIsLoading] = useState(true);
 
   const [search, setSearch] = useState<string>("");
 
@@ -93,40 +99,10 @@ export const Content = () => {
             .filter((item) => item.stock > 0)
             .map((item, index) => (
               <Grid xs={6} key={"stock-" + index}>
-                <Card
-                  isPressable
+                <IngredientCard
+                  item={item}
                   onPress={() => updateStock(item, item.stock - 1)}
-                  css={{
-                    borderWidth: 5,
-                    borderColor: "transparent",
-                    borderStyle: "solid",
-                  }}
-                >
-                  <Card.Body css={{ p: 0 }}>
-                    <Card.Image
-                      src={item.image}
-                      objectFit="cover"
-                      width="100%"
-                      height={140}
-                      alt={item.name}
-                      showSkeleton
-                    />
-                  </Card.Body>
-                  <Card.Footer css={{ justifyItems: "flex-start" }}>
-                    <Row wrap="wrap" justify="space-between" align="center">
-                      <Text b>{item.name}</Text>
-                      <Text
-                        css={{
-                          color: "$accents7",
-                          fontWeight: "$semibold",
-                          fontSize: "$sm",
-                        }}
-                      >
-                        {item.stock}x
-                      </Text>
-                    </Row>
-                  </Card.Footer>
-                </Card>
+                />
               </Grid>
             ))}
         </Grid.Container>
@@ -159,73 +135,21 @@ export const Content = () => {
                 i.name.toLowerCase().match(search.toLowerCase())
             )
             .map((item, index) => (
-              <Grid xs={6} key={index}>
-                <Card
-                  isPressable
+              <Grid xs={6} key={"available-" + index}>
+                <IngredientCard
+                  item={item}
                   onPress={() => updateStock(item, item.stock + 1)}
-                  css={{
-                    borderWidth: 5,
-                    borderColor: "transparent",
-                    borderStyle: "solid",
-                  }}
-                >
-                  <Card.Body css={{ p: 0 }}>
-                    <Card.Image
-                      src={item.image}
-                      objectFit="cover"
-                      width="100%"
-                      height={140}
-                      alt={item.name}
-                      showSkeleton
-                    />
-                  </Card.Body>
-                  <Card.Footer css={{ justifyItems: "flex-start" }}>
-                    <Row wrap="wrap" justify="space-between" align="center">
-                      <Text b>{item.name}</Text>
-                      <Text
-                        css={{
-                          color: "$accents7",
-                          fontWeight: "$semibold",
-                          fontSize: "$sm",
-                        }}
-                      >
-                        {item.stock}x
-                      </Text>
-                    </Row>
-                  </Card.Footer>
-                </Card>
+                />
               </Grid>
             ))}
         </Grid.Container>
 
-        <Modal
-          scroll
-          fullScreen
-          closeButton
-          aria-labelledby="modal-name"
-          aria-describedby="modal-description"
-          {...bindings}
-        >
-          <Modal.Header>
-            <Text id="modal-name" size={18}>
-              Empfohlene Rezepte
-            </Text>
-          </Modal.Header>
-          <Modal.Body>
-            <Grid.Container gap={1}>
-              {recommendedRecipes.map((item) => (
-                <Grid xs={12} key={item.id}>
-                  <RecipeCard recipe={item} />
-                </Grid>
-              ))}
-            </Grid.Container>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button flat auto color="error" onClick={() => setVisible(false)}>
-              Schliessen
-            </Button>
-          </Modal.Footer>
-        </Modal>
+        <RecipesModal
+          isLoading={isLoading}
+          recommendedRecipes={recommendedRecipes}
+          bindings={bindings}
+          setVisible={setVisible}
+        />
       </Container>
       <Card
         style={{
@@ -238,34 +162,14 @@ export const Content = () => {
       >
         <Card.Body>
           <Grid.Container justify="center" gap={1}>
-            <Grid xs={6}>
+            <Grid xs={12}>
               <Button
-                color="primary"
+                color="gradient"
                 auto
                 style={{ width: "100%" }}
                 onPress={() => handleSubmit()}
               >
-                <Image
-                  src="/112-book-morph-outline.gif"
-                  height={40}
-                  width={40}
-                  alt=""
-                />
-              </Button>
-            </Grid>
-            <Grid xs={6}>
-              <Button
-                color="primary"
-                auto
-                style={{ width: "100%" }}
-                onPress={() => handleSubmit()}
-              >
-                <Image
-                  src="/139-basket-outline.gif"
-                  height={40}
-                  width={40}
-                  alt=""
-                />
+                Rezepte
               </Button>
             </Grid>
           </Grid.Container>

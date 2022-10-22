@@ -1,18 +1,28 @@
 [
-    {
-        "id": 1,
-        "name": "Nice Meal",
-        "category": "Nice Food",
-        "kcal": 500,
-        "image": "https://images.unsplash.com/photo-1666361300574-4c3c94054089",
-        "ingredients": [
-          "Lorem",
-          "Ipsum"
-        ],
-        "instructions": [
-          "Do x",
-          "Do y",
-          "Eat"
-        ]
-    }
+  {
+    "id": 1,
+    "name": "Spaghetti Carbonara",
+    "image": "https://assets.marthastewart.com/styles/wmax-750/d10/main_01354/main_01354_horiz.jpg?itok=CRVZzWSG",
+    "persons": 2,
+    "cookingTime": 20,
+    "ingredients": [
+      {
+        "quantity": 1,
+        "ingredient": {
+          "id": 1,
+          "name": "Orange",
+          "image": "/images/fruit-1.jpeg",
+          "kcal": 30,
+          "stock": 12
+        }
+      }
+    ],
+    "instructions": [
+      "Cook pasta according to package directions.",
+      "Meanwhile, in a large skillet, cook bacon over medium heat until crisp. Remove to paper towels to drain, reserving 1 tablespoon drippings in skillet.",
+      "Whisk eggs, cream, and garlic in a large bowl. Season with salt and pepper. Add pasta and bacon to egg mixture; toss to coat. Sprinkle with cheese and parsley.",
+      "Transfer to a serving bowl and serve immediately."
+    ],
+    "kcal": 3000
+  }
 ]

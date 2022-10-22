@@ -18,9 +18,7 @@ export const Layout: React.FC<{ children: any }> = ({ children }) => {
         </Navbar.Brand>
         <Navbar.Content enableCursorHighlight hideIn="xs" variant="underline">
           <Navbar.Link href="/">Home</Navbar.Link>
-          <Navbar.Link isActive href="/recipes">
-            Recipes
-          </Navbar.Link>
+          <Navbar.Link href="/recipes">Recipes</Navbar.Link>
           <Navbar.Link href="/ingredients">Ingredients</Navbar.Link>
           <Navbar.Link href="/profile">Profile</Navbar.Link>
         </Navbar.Content>
@@ -39,7 +37,7 @@ export const Layout: React.FC<{ children: any }> = ({ children }) => {
                 css={{
                   minWidth: "100%",
                 }}
-                href="#"
+                href={item.toLowerCase()}
               >
                 {item}
               </Link>

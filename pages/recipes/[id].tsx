@@ -1,38 +1,25 @@
 import { Container, Grid, Image, Text } from "@nextui-org/react";
 import { NextPage } from "next";
+import path from "path";
 import IngredientsTable from "../../components/IngredientsTable";
 import { Layout } from "../../components/Layout";
 import { Recipe } from "../../models/recipe";
+import { promises as fs } from "fs";
 
-const RecipeDetails: NextPage = () => {
-  const recipe: Recipe = {
-    id: 1,
-    name: "Spaghetti Carbonara",
-    image:
-      "https://assets.marthastewart.com/styles/wmax-750/d10/main_01354/main_01354_horiz.jpg?itok=CRVZzWSG",
-    persons: 2,
-    cookingTime: 20,
-    ingredients: [
-      {
-        quantity: 1,
-        ingredient: {
-          id: 1,
-          name: "Orange",
-          image: "/images/fruit-1.jpeg",
-          kcal: 30,
-          stock: 12,
-        },
-      },
-    ],
-    instructions: [
-      "Cook pasta according to package directions.",
-      "Meanwhile, in a large skillet, cook bacon over medium heat until crisp. Remove to paper towels to drain, reserving 1 tablespoon drippings in skillet.",
-      "Whisk eggs, cream, and garlic in a large bowl. Season with salt and pepper. Add pasta and bacon to egg mixture; toss to coat. Sprinkle with cheese and parsley.",
-      "Transfer to a serving bowl and serve immediately.",
-    ],
-    kcal: 3000,
-  };
+export async function getServerSideProps() {
+  // Fetch data from external API
+  const jsonDirectory = path.join(process.cwd(), "json");
+  const fileContents = await fs.readFile(
+    jsonDirectory + "/recipes.json",
+    "utf8"
+  );
+  const recipe = JSON.parse(fileContents)[0];
 
+  // Pass data to the page via props
+  return { props: { recipe } };
+}
+
+const RecipeDetails: NextPage<{ recipe: Recipe }> = ({ recipe }) => {
   return (
     <Layout>
       <Container fluid>
@@ -63,7 +50,7 @@ const RecipeDetails: NextPage = () => {
           </Grid>
           <Grid xs={12}>
             <div>
-              <Text h3>Instructions</Text>
+              <Text h3>Anleitung</Text>
               <ol>
                 {recipe.instructions.map((instruction) => (
                   <li key={instruction}>{instruction}</li>
