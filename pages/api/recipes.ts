@@ -4,6 +4,7 @@ import { Recipe } from '../../models/recipe'
 
 import path from 'path';
 import { promises as fs } from 'fs';
+import { Ingredient } from '../../models/ingredient';
 
 export default async function handler(
   req: NextApiRequest,
@@ -11,16 +12,11 @@ export default async function handler(
 ) {
 
   const jsonDirectory = path.join(process.cwd(), 'json');
-  const fileContents = await fs.readFile(jsonDirectory + '/recipes.json', 'utf8');
-  const objData = JSON.parse(fileContents)
+  const receipes = JSON.parse(await fs.readFile(jsonDirectory + '/recipes.json', 'utf8'));
+  const fridgeItems = req.body as Ingredient[];
+  const fridgeItemNames = fridgeItems.map(i => i.name.toLowerCase())
+  
+  let recipeList: Array<Recipe> = receipes.filter((receipe: Recipe) => receipe.ingredients.every(item => fridgeItemNames.some(fi => item.name.toLowerCase().includes(fi))))
 
-  if (req.method === "POST") {
-    // TODO: Verify request and handle request data
-    console.log(req.body)
-    
-    res.json(objData)
-    
-  } else {
-    res.status(405).send("METHOD NOT ALLOWED")
-  }
+  res.status(200).send(recipeList)
 }
