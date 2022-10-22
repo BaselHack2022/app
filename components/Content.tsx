@@ -2,17 +2,17 @@ import {
   Button,
   Card,
   Container,
-  Grid,
-  Input,
+  Grid, Image, Input,
   Spacer,
   Text,
-  useModal,
+  useModal
 } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Ingredient } from "../models/ingredient";
 import { Recipe } from "../models/recipe";
 import IngredientCard from "./IngredientCard";
+import IngredientsRecognitionModal from "./IngredientsRecognitionModal";
 import RecipesModal from "./RecipesModal";
 
 export const Content = () => {
@@ -44,6 +44,7 @@ export const Content = () => {
   }, []);
 
   const { setVisible, bindings } = useModal();
+  const { setVisible: setVisibleImage, bindings: bindingsImage } = useModal();
   const [recommendedRecipes, setRecommendedRecipes] = useState<Recipe[]>([]);
 
   const updateStock = async (ingredient: Ingredient, stock: number) => {
@@ -150,6 +151,12 @@ export const Content = () => {
           bindings={bindings}
           setVisible={setVisible}
         />
+
+        <IngredientsRecognitionModal
+          setVisible={setVisibleImage}
+          bindings={bindingsImage}
+          ingredients={ingredients}
+        />
       </Container>
       <Card
         style={{
@@ -162,7 +169,7 @@ export const Content = () => {
       >
         <Card.Body>
           <Grid.Container justify="center" gap={1}>
-            <Grid xs={12}>
+            <Grid xs={8}>
               <Button
                 color="gradient"
                 auto
@@ -170,6 +177,16 @@ export const Content = () => {
                 onPress={() => handleSubmit()}
               >
                 Rezepte
+              </Button>
+            </Grid>
+            <Grid xs={4}>
+              <Button
+                color="gradient"
+                auto
+                style={{ width: "100%" }}
+                onPress={() => setVisibleImage(true)}
+              >
+                <Image src={"/61-camera-outline.gif"} alt={""} width={40} height={40} />
               </Button>
             </Grid>
           </Grid.Container>
