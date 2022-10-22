@@ -19,7 +19,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
       <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
         <Col>
           <Text size={12} weight="bold" transform="uppercase" color="#ffffffAA">
-            {recipe.category}
+            {recipe.kcal}
           </Text>
           <Text h4 color="white">
             {recipe.name}

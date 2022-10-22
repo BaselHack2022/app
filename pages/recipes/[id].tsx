@@ -1,5 +1,6 @@
 import { Container, Grid, Image, Text } from "@nextui-org/react";
 import { NextPage } from "next";
+import IngredientsTable from "../../components/IngredientsTable";
 import { Layout } from "../../components/Layout";
 import { Recipe } from "../../models/recipe";
 
@@ -9,8 +10,19 @@ const RecipeDetails: NextPage = () => {
     name: "Spaghetti Carbonara",
     image:
       "https://assets.marthastewart.com/styles/wmax-750/d10/main_01354/main_01354_horiz.jpg?itok=CRVZzWSG",
-    category: "Pasta",
-    ingredients: ["Pasta", "Eggs", "Bacon", "Parmesan Cheese"],
+    persons: 2,
+    cookingTime: 20,
+    ingredients: [
+      {
+        quantity: 1,
+        ingredient: {
+          id: 1,
+          name: "Orange",
+          image: "/images/fruit-1.jpeg",
+          kcal: 30,
+        },
+      },
+    ],
     instructions: [
       "Cook pasta according to package directions.",
       "Meanwhile, in a large skillet, cook bacon over medium heat until crisp. Remove to paper towels to drain, reserving 1 tablespoon drippings in skillet.",
@@ -43,14 +55,10 @@ const RecipeDetails: NextPage = () => {
             </Text>
           </Grid>
           <Grid xs={12}>
-            <div>
-              <Text h3>Ingredients</Text>
-              <ul>
-                {recipe.ingredients.map((ingredient) => (
-                  <li key={ingredient}>{ingredient}</li>
-                ))}
-              </ul>
-            </div>
+            <IngredientsTable
+              ingredients={recipe.ingredients}
+              persons={recipe.persons}
+            />
           </Grid>
           <Grid xs={12}>
             <div>

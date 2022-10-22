@@ -74,8 +74,19 @@ export const Content = () => {
       name: "Spaghetti Carbonara",
       image:
         "https://assets.marthastewart.com/styles/wmax-750/d10/main_01354/main_01354_horiz.jpg?itok=CRVZzWSG",
-      category: "Pasta",
-      ingredients: ["Pasta", "Eggs", "Bacon", "Parmesan Cheese"],
+      persons: 2,
+      cookingTime: 20,
+      ingredients: [
+        {
+          quantity: 1,
+          ingredient: {
+            id: 1,
+            name: "Orange",
+            image: "/images/fruit-1.jpeg",
+            kcal: 30,
+          },
+        },
+      ],
       instructions: [
         "Cook pasta according to package directions.",
         "Meanwhile, in a large skillet, cook bacon over medium heat until crisp. Remove to paper towels to drain, reserving 1 tablespoon drippings in skillet.",
@@ -92,6 +103,21 @@ export const Content = () => {
       return;
     }
     setSelected((prev) => [...prev, index]);
+  };
+
+  const handleSubmit = () => {
+    fetch("/api/recipes", {
+      method: "POST",
+      body: JSON.stringify(selected.map((index) => ingredients[index])),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setRecommendedRecipes(data);
+        setVisible(true);
+      })
+      .catch(() => {
+        setVisible(true);
+      });
   };
 
   return (
@@ -168,7 +194,7 @@ export const Content = () => {
                 auto
                 disabled={selected.length === 0}
                 style={{ width: "100%" }}
-                onPress={() => setVisible(true)}
+                onPress={() => handleSubmit()}
               >
                 Go
               </Button>
