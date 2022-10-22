@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Tomate",
+        "image": "https://test.invalid",
+        "kcal": 1500 
+    },
+    {
+        "id": 2,
+        "name": "Getroknete Bananen",
+        "image": "https://test.invalid",
+        "kcal": 1500
+    }
+]

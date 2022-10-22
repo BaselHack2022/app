@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "name": "Nice Meal",
+        "category": "Nice Food",
+        "kcal": 500,
+        "image": "https://images.unsplash.com/photo-1666361300574-4c3c94054089",
+        "ingredients": [
+          "Lorem",
+          "Ipsum"
+        ],
+        "instructions": [
+          "Do x",
+          "Do y",
+          "Eat"
+        ]
+    }
+]
