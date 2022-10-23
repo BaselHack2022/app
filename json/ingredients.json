@@ -21,13 +21,6 @@
     "searchText": "citron"
 }, {
     "category": "spices",
-    "id": "4",
-    "image": "https://www.gewuerze-der-welt.net/media/image/4e/5e/06/Zucker-Salz-8982N97IzwioPte2_600x600.jpg",
-    "kcal": "100",
-    "name": "Salz",
-    "searchText": "salt"
-}, {
-    "category": "spices",
     "id": "5",
     "image": "https://www.pastaweb.de/wp-content/uploads/2016/02/pfeffer.jpg",
     "kcal": "100",
@@ -353,12 +346,7 @@
     "id": "51",
     "image": "https://i.ytimg.com/vi/qU4PksY10pM/maxresdefault.jpg",
     "kcal": "100",
-    "name": "Banana"
-  },
-  {
-    "id": "48",
-    "image": "https://gemuesebodensee.ch/sites/default/files/styles/spalte_rechts_1_3/public/produktebilder/N%C3%BCsslisalat.jpg?itok=Hme9b0rq",
-    "kcal": "100",
-    "name": "Nüsslisalat"
+    "name": "Getrocknete Bananen",
+    "searchText": "banana, banane"
   }
 ]
