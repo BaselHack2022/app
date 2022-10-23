@@ -21,15 +21,10 @@ export default function App() {
         <Navbar.Brand>
           <Navbar.Toggle aria-label="toggle navigation" />
           <Logo />
-          <Text b color="inherit" hideIn="xs">
-            ACME
-          </Text>
         </Navbar.Brand>
         <Navbar.Content enableCursorHighlight hideIn="xs" variant="underline">
           <Navbar.Link href="#">Features</Navbar.Link>
-          <Navbar.Link isActive href="#">
-            Customers
-          </Navbar.Link>
+          <Navbar.Link href="#">Customers</Navbar.Link>
           <Navbar.Link href="#">Pricing</Navbar.Link>
           <Navbar.Link href="#">Company</Navbar.Link>
         </Navbar.Content>
@@ -45,13 +40,12 @@ export default function App() {
         </Navbar.Content>
         <Navbar.Collapse>
           {collapseItems.map((item, index) => (
-            <Navbar.CollapseItem key={item}>
+            <Navbar.CollapseItem key={index}>
               <Link
                 color="inherit"
                 css={{
                   minWidth: "100%",
                 }}
-                href="#"
               >
                 {item}
               </Link>

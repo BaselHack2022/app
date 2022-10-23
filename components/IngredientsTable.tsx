@@ -31,8 +31,8 @@ const IngredientsTable: React.FC<IngredientsTableProps> = ({
             <Table.Column>Zutaten</Table.Column>
           </Table.Header>
           <Table.Body>
-            {ingredients.map((ingredient) => (
-              <Table.Row key={ingredient.ingredient.id}>
+            {ingredients.map((ingredient, i) => (
+              <Table.Row key={i}>
                 <Table.Cell>{ingredient.quantity || "ein bizeli"}</Table.Cell>
                 <Table.Cell>
                   <Link

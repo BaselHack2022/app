@@ -1,10 +1,3 @@
-export const Logo = () => (
-  <svg
-    className=""
-    fill="none"
-    height="36"
-    viewBox="0 0 32 32"
-    width="36"
-    xmlns="http://www.w3.org/2000/svg"
-  />
-);
+import { Image } from "@nextui-org/react";
+
+export const Logo = () => <Image alt="Logo" src="/logo.png" width={50} css={{marginLeft: 10}} />;

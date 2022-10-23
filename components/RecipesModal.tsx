@@ -1,6 +1,4 @@
-import {
-    Button, Grid, Image, Modal, Text
-} from "@nextui-org/react";
+import { Button, Grid, Image, Modal, Text } from "@nextui-org/react";
 import React from "react";
 import { Recipe } from "../models/recipe";
 import RecipeCard from "./RecipeCard";
@@ -31,7 +29,14 @@ const RecipesModal: React.FC<RecipesModalProps> = ({
       {...bindings}
     >
       <Modal.Header>
-        <Text id="modal-name" size={18}>
+        <Text
+          h3
+          css={{
+            textGradient: "45deg, $blue600 -20%, $green600 50%",
+            textAlign: "center",
+            paddingTop: "1rem",
+          }}
+        >
           Empfohlene Rezepte
         </Text>
       </Modal.Header>
