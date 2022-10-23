@@ -1,4 +1,4 @@
-import { Container, Grid, Image, Text } from "@nextui-org/react";
+import { Container, Grid, Image, Link, Text } from "@nextui-org/react";
 import { NextPage } from "next";
 import path from "path";
 import IngredientsTable from "../../components/IngredientsTable";
@@ -41,6 +41,11 @@ const RecipeDetails: NextPage<{ recipe: Recipe }> = ({ recipe }) => {
             >
               {recipe.name}
             </Text>
+          </Grid>
+          <Grid xs={12}>
+            <Link isExternal href={recipe.url}>
+              Rezept
+            </Link>
           </Grid>
           <Grid xs={12}>
             <IngredientsTable
