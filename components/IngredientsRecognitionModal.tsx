@@ -11,6 +11,10 @@ const videoConstraints = {
   facingMode: "environment",
 };
 
+const arrayHasOnOreMoreSimilarItems = (array1: string[], array2: string[]) => {
+  return array1.some((item) => array2.includes(item));
+};
+
 const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
   ingredients: ing,
 }) => {
@@ -68,11 +72,17 @@ const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
         ))}
       </ul> */}
       {ingredients
-        .filter((i) =>
-          predictions
-            .map((p) => p.name.toLowerCase())
-            .includes(i.name.toLowerCase())
-        )
+        .filter((i) => {
+          return (
+            predictions
+              .map((p) => p.name.toLowerCase())
+              .includes(i.name.toLowerCase()) ||
+            i.searchText && arrayHasOnOreMoreSimilarItems(
+              predictions.map((p) => p.name.toLowerCase()),
+              i.searchText.split(",")
+            )
+          );
+        })
         .map((ingredient) => (
           <IngredientCard
             item={ingredient}

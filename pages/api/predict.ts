@@ -4,12 +4,15 @@ import type { NextApiRequest, NextApiResponse } from "next";
 const atobPolyfill = (a: any) => Buffer.from(a, "base64").toString("binary");
 
 import vision from "@google-cloud/vision";
+import { GoogleAuth } from "google-auth-library";
 
 const client: any = new vision.ImageAnnotatorClient({
-  credentials: {
-    client_email: process.env.EMAIL,
-    private_key: process.env.PRIVATE_KEY,
-  },
+  auth: new GoogleAuth({
+    credentials: {
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      private_key: process.env.GOOGLE_PRIVATE_KEY,
+    },
+  }),
 });
 
 const dataURLtoBlob = (dataurl: string) => {
