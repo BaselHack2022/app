@@ -348,5 +348,11 @@
     "kcal": "100",
     "name": "Getrocknete Bananen",
     "searchText": "banana, banane"
-  }
-]
+}, {
+    "category": "fruit",
+    "id": "52",
+    "image": "https://www.coop.ch/img/produkte/737_737/RGB/3518079_001.jpg",
+    "kcal": "100",
+    "name": "Vanille Glace",
+    "searchText": "glace, ice cream, vanille"
+}]

@@ -10210,27 +10210,30 @@
   "instructions": [" 1. Das Herz in ca. 2–3 cm dicke Scheiben schneiden und gründlich von Arterien und Sehnen befreien. Herzscheiben in eine Form legen, den grünen Pfeffer grob hacken und darüber streuen. Das Bier gleichmässig darüber giessen und das Ganze zugedeckt über Nacht im Kühlschrank marinieren.2. Das Fleisch eine Stunde vor der  aus dem Kühlschrank nehmen.3. Den Grill für mässige Hitze vorbereiten. Herzscheiben aus der Marinade nehmen, auf Küchenpapier abtropfen und auf dem Grill 20–25 Minuten garen. Dabei gelegentlich wenden.4. Herzscheiben vom Grill nehmen, mit grob gehacktem Majoran und grobem Salz bestreuen und servieren."]
 }, {
   "id": 134,
-  "name": "Weisses Schokoladenparfait mit getrockneten Bananen",
+  "name": "Heisser Bananen-Split",
   "category": "General",
-  "kcal": 500,
-  "image": "https://images.ctfassets.net/l9qj50bqgqik/5UU9X5odsAEKWq8a48u6ck/7f9828a2052dda10a5b57910e9f6b08b/2010-03-weisses-schokoladenparfait-mit-getrockneten-bananen.jpg?fit=thumb&fm=webp&h=412&q=60&w=620",
-  "url": "https://www.wildeisen.ch/rezepte/weisses-schokoladenparfait-mit-getrockneten-bananen",
-  "persons": 5,
-  "cookingTime": "Instant",
+  "kcal": 1200,
+  "image": "https://www.bettybossi.ch/static/rezepte/x/bb_bbzf080615_0023b_x.jpg",
+  "url": "https://www.bettybossi.ch/de/Rezept/ShowRezept/BB_BBZF080615_0023B-40-de",
+  "persons": 1,
+  "cookingTime": "5 Min.",
   "ingredients": [{
     "ingredient": {
       "name": "Getrocknete Bananen",
       "stock": 0
     },
     "quantity": "2"
+  }, {
+    "ingredient": {
+      "name": "Vanille Glace",
+      "stock": 0
+    },
+    "quantity": ""
   }],
   "instructions": [
-    "Die Bananen in feine Streifen schneiden, in eine Schüssel geben und mit dem Rum mischen. 2 Stunden ziehen lassen.",
-    "Eine Cake- oder Terrinenform mit Klarsichtfolie auslegen. Am besten geht dies, wenn man die Folie mit Wasser befeuchtet. Ins Gefriergerät oder Tiefkühlfach stellen.",
+    "Holzkohlegrill: Bananenhälften mit der Schalenseite nach unten auf den Rost legen, ca. 7 Min. über mittelstarker Glut grillieren.",
+    "Gas- oder Elektrogrill: ca. 7 Min. auf mittlerer Stufe (ca. 200 Grad) grillieren.",
     "Die Milchschokolade fein hacken und beiseitestellen.",
-    "Die weisse Schokolade in Stücke brechen. Mit der Milch und der Vanillepaste in eine Schüssel geben und über einem heissen Wasserbad schmelzen. Wichtig: Die Temperatur der Schokolade darf 37 Grad (handwarm) nicht überschreiten, da sie sonst scheidet! Alles gut glatt rühren.",
-    "Den Rahm steif schlagen und kühl stellen.",
-    "Eigelb und Zucker mit einem Rührgerät 6–7 Minuten zu einer hellen, dicklichen Masse aufschlagen. Dann die geschmolzene weisse Schokolade unterrühren und den geschlagenen Rahm unterziehen. Zuletzt die eingelegten Bananen mitsamt Rum und die gehackte Milchschokolade untermischen. Die Masse in die vorbereitete Form füllen. Das Parfait mindestens 8 Stunden, am besten aber über Nacht gefrieren lassen.6 Für die Sauce die Milch aufkochen. Die Schokolade in Stücke brechen, in eine Schüssel geben und mit der heissen Milch übergiessen. wenn die Schokolade geschmolzen ist, die Butter beifügen und alles glatt rühren.",
-    "Zum Servieren das Parfait aus der Form stürzen und im Kühlschrank mindestens 10 Minuten antauen lassen. In Scheiben schneiden, mit der Sauce auf Tellern anrichten und sofort servieren."
+    "Servieren: Je eine Bananenhälfte auf den Tellern anrichten. Aus der Glace ca. 2cm breite Scheiben schneiden, mit den Bananen anrichten."
   ]
 }]
