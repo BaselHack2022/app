@@ -29,6 +29,7 @@ export const Content = () => {
         setIngredients(
           data.map((item: Ingredient) => {
             const { id } = item;
+            item.stock = 0;
             if (!id) return item;
             if (window.localStorage.getItem(id.toString())) {
               item.stock = parseInt(
@@ -103,13 +104,13 @@ export const Content = () => {
 
         <Grid.Container gap={1} css={{ marginBottom: 20, marginTop: 10 }}>
           {ingredients
-            .filter((item) => item.stock && item.stock > 0)
+            .filter((item) => item.stock !== undefined && item.stock > 0)
             .map((item, index) => (
               <Grid xs={6} key={"stock-" + index}>
                 <IngredientCard
                   item={item}
                   onPress={() => {
-                    if (item && item.stock) updateStock(item, item.stock - 1);
+                    if (item && item.stock !== undefined) updateStock(item, item.stock - 1);
                   }}
                 />
               </Grid>
@@ -148,7 +149,7 @@ export const Content = () => {
                 <IngredientCard
                   item={item}
                   onPress={() => {
-                    if (item && item.stock) updateStock(item, item.stock + 1);
+                    if (item && item.stock !== undefined) updateStock(item, item.stock + 1);
                   }}
                 />
               </Grid>

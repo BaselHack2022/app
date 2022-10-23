@@ -33,7 +33,7 @@ export default async function handler(
 ) {
   const image = JSON.parse(req.body).image as string;
 
-  console.log(dataURLtoBlob(image));
+  // console.log(dataURLtoBlob(image));
   // console.log("Image", Buffer.from(image).toString("base64"));
   const request = {
     image: {
