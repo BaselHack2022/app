@@ -2,12 +2,8 @@ import { Button, Image, Modal, Text } from "@nextui-org/react";
 import React, { useState } from "react";
 import Webcam from "react-webcam";
 
-import "@tensorflow/tfjs-backend-cpu";
-import "@tensorflow/tfjs-backend-webgl";
 import { Ingredient } from "../models/ingredient";
 import IngredientCard from "./IngredientCard";
-
-const cocoSsd = require("@tensorflow-models/coco-ssd");
 
 const videoConstraints = {
   width: 1280,
@@ -20,19 +16,14 @@ const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
 }) => {
   const [image, setImage] = useState<string>("");
   const [predictions, setPredictions] = useState<
-    { class: string; score: number }[]
+    { name: string; score: number }[]
   >([]);
 
-  const predict = async () => {
-    const img = document.getElementById("testImage") as HTMLImageElement;
-
-    // Load the model.
-    const model = await cocoSsd.load();
-
-    // Classify the image.
-    const predictions = await model.detect(img);
-    console.log(predictions);
-    setPredictions(predictions);
+  const predict = async (imageSrc: string) => {
+    fetch("/api/predict", {
+      method: "POST",
+      body: JSON.stringify({ image: imageSrc }),
+    }).then(res => res.json()).then((data) => setPredictions(data));
   };
 
   const webcamRef = React.useRef<Webcam>(null);
@@ -40,7 +31,7 @@ const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
     if (webcamRef.current && webcamRef.current !== null) {
       const imageSrc = webcamRef.current.getScreenshot();
       setImage(imageSrc as string);
-      predict();
+      predict(imageSrc as string);
     }
   }, [webcamRef]);
   return (
@@ -56,15 +47,15 @@ const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
       <Button onClick={capture}>Aufnahme</Button>
       <ul>
         {predictions.map((prediction) => (
-          <li key={prediction.class}>
-            {prediction.class} - {Math.round(prediction.score * 100)}%
+          <li key={prediction.name}>
+            {prediction.name} - {Math.round(prediction.score * 100)}%
           </li>
         ))}
       </ul>
       {ingredients
         .filter((i) =>
           predictions
-            .map((p) => p.class.toLowerCase())
+            .map((p) => p.name.toLowerCase())
             .includes(i.name.toLowerCase())
         )
         .map((ingredient) => (
@@ -114,7 +105,7 @@ const IngredientsRecognitionModal: React.FC<
         <WebcamCapture ingredients={ingredients} />
       </Modal.Body>
       <Modal.Footer>
-        <Button flat auto color="error" onClick={() => setVisible(false)}>
+        <Button flat auto color="error" onPress={() => setVisible(false)}>
           Schliessen
         </Button>
       </Modal.Footer>
