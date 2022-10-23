@@ -268,5 +268,11 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg",
     "kcal": "100",
     "name": "Banana"
+  },
+  {
+    "id": "48",
+    "image": "https://gemuesebodensee.ch/sites/default/files/styles/spalte_rechts_1_3/public/produktebilder/N%C3%BCsslisalat.jpg?itok=Hme9b0rq",
+    "kcal": "100",
+    "name": "Nüsslisalat"
   }
 ]

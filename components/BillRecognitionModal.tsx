@@ -28,17 +28,19 @@ const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
   };
 
   const [image, setImage] = useState<string>("");
-  const [predictions, setPredictions] = useState<
-    { name: string; score: number }[]
-  >([]);
+  const [predictions, setPredictions] = useState<string[]>([]);
 
   const predict = async (imageSrc: string) => {
-    fetch("/api/predict", {
+    fetch("/api/ocr", {
       method: "POST",
       body: JSON.stringify({ image: imageSrc }),
     })
       .then((res) => res.json())
-      .then((data) => setPredictions(data));
+      .then((data) =>
+        setPredictions(
+          (data.text.toLowerCase().replace(/ü/g, "u") || "").split(/[\n\s]/)
+        )
+      );
   };
 
   const webcamRef = React.useRef<Webcam>(null);
@@ -60,26 +62,24 @@ const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
       />
 
       <Button onClick={capture}>Aufnahme</Button>
-      {/* <ul>
-        {predictions.map((prediction) => (
-          <li key={prediction.name}>
-            {prediction.name} - {Math.round(prediction.score * 100)}%
-          </li>
-        ))}
-      </ul> */}
-      {ingredients
-        .filter((i) =>
-          predictions
-            .map((p) => p.name.toLowerCase())
-            .includes(i.name.toLowerCase())
-        )
-        .map((ingredient) => (
-          <IngredientCard
-            item={ingredient}
-            key={ingredient.id}
-            onPress={() => updateStock(ingredient, ingredient.stock + 1)}
-          />
-        ))}
+
+      {/* {predictions.join(", ")} */}
+
+      {predictions.length > 0 &&
+        ingredients
+          .map((i) => ({ ...i, name: i.name.replace(/ü/g, "u") }))
+          .filter((i) =>
+            predictions
+              .map((i) => i.trim())
+              .includes(i.name.toLowerCase().trim())
+          )
+          .map((ingredient) => (
+            <IngredientCard
+              item={ingredient}
+              key={ingredient.id}
+              onPress={() => updateStock(ingredient, ingredient.stock + 1)}
+            />
+          ))}
 
       <Image
         style={{ display: "none" }}

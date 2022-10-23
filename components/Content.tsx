@@ -2,18 +2,23 @@ import {
   Button,
   Card,
   Container,
-  Grid, Image, Input,
+  Grid,
+  Image,
+  Input,
   Spacer,
   Text,
-  useModal
+  useModal,
 } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { Ingredient } from "../models/ingredient";
 import { Recipe } from "../models/recipe";
+import BillRecognitionModal from "./BillRecognitionModal";
 import IngredientCard from "./IngredientCard";
 import IngredientsRecognitionModal from "./IngredientsRecognitionModal";
 import RecipesModal from "./RecipesModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCamera, faFileInvoice } from "@fortawesome/free-solid-svg-icons";
 
 export const Content = () => {
   const router = useRouter();
@@ -45,6 +50,7 @@ export const Content = () => {
 
   const { setVisible, bindings } = useModal();
   const { setVisible: setVisibleImage, bindings: bindingsImage } = useModal();
+  const { setVisible: setVisibleBill, bindings: bindingsBill } = useModal();
   const [recommendedRecipes, setRecommendedRecipes] = useState<Recipe[]>([]);
 
   const updateStock = async (ingredient: Ingredient, stock: number) => {
@@ -157,6 +163,12 @@ export const Content = () => {
           bindings={bindingsImage}
           ingredients={ingredients}
         />
+
+        <BillRecognitionModal
+          setVisible={setVisibleBill}
+          bindings={bindingsBill}
+          ingredients={ingredients}
+        />
       </Container>
       <Card
         style={{
@@ -169,7 +181,7 @@ export const Content = () => {
       >
         <Card.Body>
           <Grid.Container justify="center" gap={1}>
-            <Grid xs={8}>
+            <Grid xs={4}>
               <Button
                 color="gradient"
                 auto
@@ -181,12 +193,22 @@ export const Content = () => {
             </Grid>
             <Grid xs={4}>
               <Button
-                color="gradient"
+                color="secondary"
+                auto
+                style={{ width: "100%" }}
+                onPress={() => setVisibleBill(true)}
+              >
+                <FontAwesomeIcon icon={faFileInvoice} />
+              </Button>
+            </Grid>
+            <Grid xs={4}>
+              <Button
+                color="primary"
                 auto
                 style={{ width: "100%" }}
                 onPress={() => setVisibleImage(true)}
               >
-                <Image src={"/61-camera-outline.gif"} alt={""} width={40} height={40} />
+                <FontAwesomeIcon icon={faCamera} />
               </Button>
             </Grid>
           </Grid.Container>
