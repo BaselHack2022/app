@@ -67,7 +67,7 @@ export const Content = () => {
   const handleSubmit = () => {
     fetch("/api/recipes", {
       method: "POST",
-      body: JSON.stringify(ingredients.filter((i) => i.stock > 0)),
+      body: JSON.stringify(ingredients.filter((i) => i.stock && i.stock > 0)),
       headers: {
         "Content-Type": "application/json",
       },
@@ -103,12 +103,14 @@ export const Content = () => {
 
         <Grid.Container gap={1} css={{ marginBottom: 20, marginTop: 10 }}>
           {ingredients
-            .filter((item) => item.stock > 0)
+            .filter((item) => item.stock && item.stock > 0)
             .map((item, index) => (
               <Grid xs={6} key={"stock-" + index}>
                 <IngredientCard
                   item={item}
-                  onPress={() => updateStock(item, item.stock - 1)}
+                  onPress={() => {
+                    if (item && item.stock) updateStock(item, item.stock - 1);
+                  }}
                 />
               </Grid>
             ))}
@@ -145,7 +147,9 @@ export const Content = () => {
               <Grid xs={6} key={"available-" + index}>
                 <IngredientCard
                   item={item}
-                  onPress={() => updateStock(item, item.stock + 1)}
+                  onPress={() => {
+                    if (item && item.stock) updateStock(item, item.stock + 1);
+                  }}
                 />
               </Grid>
             ))}
