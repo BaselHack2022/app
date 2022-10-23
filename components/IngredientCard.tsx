@@ -19,7 +19,7 @@ const IngredientCard: React.FC<IngredientCardProps> = ({ item, onPress }) => {
     >
       <Card.Body css={{ p: 0 }}>
         <Card.Image
-          src={item.image}
+          src={item.image !== undefined ? item.image : "https://images.unsplash.com/photo-1528712306091-ed0763094c98"}
           objectFit="cover"
           width="100%"
           height={140}
