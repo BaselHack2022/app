@@ -78,7 +78,7 @@ const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
               item={ingredient}
               key={ingredient.id}
               onPress={() => {
-                if (ingredient && ingredient.stock)
+                if (ingredient && ingredient.stock !== undefined)
                   updateStock(ingredient, ingredient.stock + 1);
               }}
             />

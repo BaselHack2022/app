@@ -30,6 +30,7 @@ const RecipeCard: React.FC<RecipeCardProps> = ({ recipe }) => {
         </Col>
       </Card.Header>
       <Card.Image
+        css={{ filter: "brightness(0.5)" }}
         src={recipe.image}
         objectFit="cover"
         width="100%"

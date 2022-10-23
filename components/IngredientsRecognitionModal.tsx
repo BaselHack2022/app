@@ -77,10 +77,11 @@ const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
             predictions
               .map((p) => p.name.toLowerCase())
               .includes(i.name.toLowerCase()) ||
-            i.searchText && arrayHasOnOreMoreSimilarItems(
-              predictions.map((p) => p.name.toLowerCase()),
-              i.searchText.split(",")
-            )
+            (i.searchText &&
+              arrayHasOnOreMoreSimilarItems(
+                predictions.map((p) => p.name.toLowerCase()),
+                i.searchText.split(",")
+              ))
           );
         })
         .map((ingredient) => (
@@ -88,8 +89,9 @@ const WebcamCapture: React.FC<{ ingredients: Ingredient[] }> = ({
             item={ingredient}
             key={ingredient.id}
             onPress={() => {
-              if (ingredient && ingredient.stock)
+              if (ingredient && ingredient.stock !== undefined) {
                 updateStock(ingredient, ingredient.stock + 1);
+              }
             }}
           />
         ))}
