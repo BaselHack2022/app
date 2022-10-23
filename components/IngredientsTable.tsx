@@ -33,7 +33,7 @@ const IngredientsTable: React.FC<IngredientsTableProps> = ({
           <Table.Body>
             {ingredients.map((ingredient) => (
               <Table.Row key={ingredient.ingredient.id}>
-                <Table.Cell>{(ingredient.quantity / p) * persons}x</Table.Cell>
+                <Table.Cell>{ingredient.quantity || "ein bizeli"}</Table.Cell>
                 <Table.Cell>
                   <Link
                     href={
