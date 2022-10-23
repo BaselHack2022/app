@@ -6,14 +6,14 @@ import { Layout } from "../../components/Layout";
 import { Recipe } from "../../models/recipe";
 import { promises as fs } from "fs";
 
-export async function getServerSideProps() {
+export async function getServerSideProps(context: any) {
   // Fetch data from external API
   const jsonDirectory = path.join(process.cwd(), "json");
   const fileContents = await fs.readFile(
     jsonDirectory + "/recipes.json",
     "utf8"
   );
-  const recipe = JSON.parse(fileContents)[0];
+  const recipe = JSON.parse(fileContents)[context.query.id];
 
   // Pass data to the page via props
   return { props: { recipe } };
