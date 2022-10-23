@@ -25,7 +25,7 @@ export const Layout: React.FC<{ children: any }> = ({ children }) => {
         <Navbar.Content>
           <Navbar.Item>
             <Button auto flat as={Link} href="/">
-              Start Cooking
+              Start
             </Button>
           </Navbar.Item>
         </Navbar.Content>

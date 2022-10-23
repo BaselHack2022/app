@@ -2,8 +2,16 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
 import vision from "@google-cloud/vision";
+import { GoogleAuth } from "google-auth-library";
 
-const client: any = new vision.ImageAnnotatorClient();
+const client: any = new vision.ImageAnnotatorClient({
+  auth: new GoogleAuth({
+    credentials: {
+      client_email: process.env.GOOGLE_CLIENT_EMAIL,
+      private_key: process.env.GOOGLE_PRIVATE_KEY,
+    },
+  }),
+});
 
 const dataURLtoBlob = (dataurl: string) => {
   let arr = dataurl.split(","),
