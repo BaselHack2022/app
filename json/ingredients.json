@@ -1,271 +1,357 @@
-[
-  {
+[{
+    "category": "meat",
     "id": "1",
     "image": "https://schweizerfleisch.ch/sites/schweizerfleisch/files/2021-09/01_Poulet_Brust_Brust_0.jpg",
     "kcal": "100",
-    "name": "Pouletbrust"
-  },
-  {
+    "name": "Pouletbrust",
+    "searchText": "chicken, chicken breast"
+}, {
+    "category": "spices",
     "id": "2",
     "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqbYJCLlChhkzNYWuny8lAz0yQJfmEgYa22q_2vrxlcEyxjGHCRovE_6cdzHev9lbDlXY\u0026usqp=CAU",
     "kcal": "100",
-    "name": "Salz"
-  },
-  {
+    "name": "Salz",
+    "searchText": "salt"
+}, {
+    "category": "fruit",
+    "id": "3",
+    "image": "https://migustoimages.migros.ch/crop/v-w-1200-h-675-a-center_center/9bfc29fd819cafe15f28d8f4b1351af502aa0f2b/zitrone.jpg",
+    "kcal": "100",
+    "name": "Zitrone",
+    "searchText": "citron"
+}, {
+    "category": "spices",
+    "id": "4",
+    "image": "https://www.gewuerze-der-welt.net/media/image/4e/5e/06/Zucker-Salz-8982N97IzwioPte2_600x600.jpg",
+    "kcal": "100",
+    "name": "Salz",
+    "searchText": "salt"
+}, {
+    "category": "spices",
     "id": "5",
     "image": "https://www.pastaweb.de/wp-content/uploads/2016/02/pfeffer.jpg",
     "kcal": "100",
-    "name": "Pfeffer"
-  },
-  {
+    "name": "Pfeffer",
+    "searchText": "pepper"
+}, {
+    "category": "spices",
     "id": "6",
     "image": "https://www.chefsculinar.de/chefsculinar/ds_img/assets_800/wk-01-brauner_sesam.jpg",
     "kcal": "100",
-    "name": "Sesamsamen"
-  },
-  {
+    "name": "Sesamsamen",
+    "searchText": "sesam seeds"
+}, {
+    "category": "vegetables",
     "id": "7",
     "image": "https://www.condin.shop/wp-content/uploads/2021/01/Gruener-Spargel-1024x1024.jpg",
     "kcal": "100",
-    "name": "Spargel"
-  },
-  {
+    "name": "Spargel",
+    "searchText": "asparagus"
+}, {
+    "category": "spices",
     "id": "8",
     "image": "https://www.heilpraxisnet.de/wp-content/uploads/2018/09/zucker.jpg",
     "kcal": "100",
-    "name": "Zucker"
-  },
-  {
+    "name": "Zucker",
+    "searchText": "sugar"
+}, {
+    "category": "spices",
     "id": "9",
     "image": "https://www.bzfe.de/fileadmin/resources/import/h/Honig_980x430_rdax_720x316_80.jpg",
     "kcal": "100",
-    "name": "Honig"
-  },
-  {
+    "name": "Honig",
+    "searchText": "honey"
+}, {
+    "category": "meat",
     "id": "10",
     "image": "https://www.fuster.ch/wp-content/uploads/2017/11/Bratspeck-Geschnitten.jpg",
     "kcal": "100",
-    "name": "Bratspeck"
-  },
-  {
+    "name": "Bratspeck",
+    "searchText": "bacon"
+}, {
+    "category": "vegetables",
     "id": "11",
     "image": "https://lebensmittel-warenkunde.de/assets/images/gemueseprodukte/zwiebeln.jpg",
     "kcal": "100",
-    "name": "Zwiebel"
-  },
-  {
+    "name": "Zwiebel",
+    "searchText": "onion, red onion"
+}, {
+    "category": "miscellaneous",
     "id": "12",
     "image": "https://image.essen-und-trinken.de/11901932/t/Ce/v9/w1440/r1.7778/-/vollkornmehl-mit-g-jpg--44444-.jpg",
     "kcal": "100",
-    "name": "Mehl"
-  },
-  {
+    "name": "Mehl",
+    "searchText": "flour"
+}, {
+    "category": "miscellaneous",
     "id": "13",
     "image": "https://lebensmittel-warenkunde.de/assets/images/sonnenblumen-oel.jpg",
     "kcal": "100",
-    "name": "Sonnenblumenöl"
-  },
-  {
+    "name": "Sonnenblumenöl",
+    "searchText": "sunflower oil"
+}, {
+    "category": "miscellaneous",
     "id": "14",
     "image": "https://www.pastaweb.de/wp-content/uploads/2016/02/olivenoel.jpg",
     "kcal": "100",
-    "name": "Olivenöl"
-  },
-  {
+    "name": "Olivenöl",
+    "searchText": "olive oil"
+}, {
+    "category": "miscellaneous",
     "id": "15",
     "image": "https://www.volgshop.ch/wp-content/uploads/2015/05/120178_oe_backpulver_80g.jpg",
     "kcal": "100",
-    "name": "Backpulver"
-  },
-  {
+    "name": "Backpulver",
+    "searchText": "baking powder"
+}, {
+    "category": "diary products",
     "id": "16",
     "image": "https://msgiv.brandenburg.de/sixcms/media.php/9/COLOURBOX_2570421_1x2_.jpg",
     "kcal": "100",
-    "name": "Eier"
-  },
-  {
+    "name": "Eier",
+    "searchText": "egg, eggs"
+}, {
+    "category": "diary products",
     "id": "17",
     "image": "https://images.eatsmarter.de/sites/default/files/styles/facebook/public/warenkunde-milch-300x225.jpg",
     "kcal": "100",
-    "name": "Milch "
-  },
-  {
+    "name": "Milch ",
+    "searchText": "milk"
+}, {
+    "category": "diary products",
     "id": "18",
     "image": "https://www.coop.ch/img/produkte/737_737/RGB/6595471_001.jpg?_=1591361951567",
     "kcal": "100",
-    "name": "Halbrahm"
-  },
-  {
+    "name": "Halbrahm",
+    "searchText": "half cream "
+}, {
+    "category": "diary products",
     "id": "19",
     "image": "https://www.coop.ch/img/produkte/737_737/RGB/6595472_001.jpg?_=1591103577468",
     "kcal": "100",
-    "name": "Vollrahm"
-  },
-  {
+    "name": "Vollrahm",
+    "searchText": "full cream "
+}, {
+    "category": "dry products",
     "id": "20",
     "image": "https://static.cookinesi.com/uploads/2013/10/Reis.jpg",
     "kcal": "100",
-    "name": "Reis"
-  },
-  {
+    "name": "Reis",
+    "searchText": "rice"
+}, {
+    "category": "vegetables",
     "id": "21",
-    "image": "https://c8.alamy.com/compde/j6r1ab/gewurz-knoblauchzehe-knoblauch-heilpflanze-essen-nahrungsmittel-gesundheit-makro-nahaufnahme-j6r1ab.jpg",
+    "image": "https://image.essen-und-trinken.de/11900766/t/6I/v9/w960/r1.5/-/1014120--43861-.jpg",
     "kcal": "100",
-    "name": "Knoblauchzehe"
-  },
-  {
+    "name": "Knoblauchzehe",
+    "searchText": "garlic clove"
+}, {
+    "category": "miscellaneous",
     "id": "22",
     "image": "https://www.coop.ch/img/produkte/737_737/RGB/3530971_004.jpg?_=1635771754185",
     "kcal": "100",
-    "name": "Essig"
-  },
-  {
+    "name": "Essig",
+    "searchText": "vinegar"
+}, {
+    "category": "vegetables",
     "id": "23",
     "image": "https://www.pastaweb.de/wp-content/uploads/2017/02/spinat.jpg",
     "kcal": "100",
-    "name": "Spinat"
-  },
-  {
+    "name": "Spinat",
+    "searchText": "spinach"
+}, {
+    "category": "vegetables",
     "id": "24",
     "image": "https://www.quironsalud.es/idcsalud-client/cm/images?locale=es_ES\u0026idMmedia=2299323",
     "kcal": "100",
-    "name": "Tomate"
-  },
-  {
+    "name": "Tomate",
+    "searchText": "tomato"
+}, {
+    "category": "spices",
     "id": "25",
     "image": "https://www.gesundheit.gv.at/dam/jcr:921f454d-a2ba-4915-9d6c-376e29c7ba2b/basilikum-neu.jpg",
     "kcal": "100",
-    "name": "Basilikum"
-  },
-  {
+    "name": "Basilikum",
+    "searchText": "basil"
+}, {
+    "category": "diary products",
     "id": "26",
     "image": "https://www.kuechengoetter.de/uploads/media/1800x1200/08/138488-Butter_Warenkunde.jpg?v=1-10",
     "kcal": "100",
-    "name": "Butter"
-  },
-  {
+    "name": "Butter",
+    "searchText": "butter"
+}, {
+    "category": "meat",
     "id": "27",
     "image": "https://media.istockphoto.com/photos/raw-veal-chop-picture-id174973484?k=20\u0026m=174973484\u0026s=612x612\u0026w=0\u0026h=uo47DzvNDIaxtKto9W2U9kUqo7Anw3Jx8ddQHYGNlXM=",
     "kcal": "100",
-    "name": "Kalbskotlett"
-  },
-  {
+    "name": "Kalbskotelett",
+    "searchText": "veal chop"
+}, {
+    "category": "vegetables",
     "id": "28",
     "image": "https://images.eatsmarter.de/sites/default/files/styles/facebook/public/images/warenkunde-staudensellerie-341x256.jpg",
     "kcal": "100",
-    "name": "Staudensellerie"
-  },
-  {
+    "name": "Staudensellerie",
+    "searchText": "celery"
+}, {
+    "category": "fruit",
     "id": "29",
     "image": "https://www.vitapowershop.ch/8155-large_default/aprikosensussbio.jpg",
     "kcal": "100",
-    "name": "Getrocknete Aprikosen"
-  },
-  {
+    "name": "Getrocknete Aprikosen",
+    "searchText": "dry apricots, apricots dry, apricots"
+}, {
+    "category": "spices",
     "id": "30",
     "image": "https://media.istockphoto.com/photos/vanilla-beans-with-orchid-picture-id510624822?k=20\u0026m=510624822\u0026s=612x612\u0026w=0\u0026h=0A2WvjlQiXWfzkXPytQO53ccE7FozZ1y77J9CjqF3RY=",
     "kcal": "100",
-    "name": "Vanilleschote"
-  },
-  {
+    "name": "Vanilleschote",
+    "searchText": "vanilla, vanilla pod"
+}, {
+    "category": "spices",
     "id": "31",
     "image": "https://www.suppenhandel.de/mediafiles/Bilder/curry-pulver.jpg",
     "kcal": "100",
-    "name": "Currypulver"
-  },
-  {
+    "name": "Currypulver",
+    "searchText": "curry, curry powder"
+}, {
+    "category": "vegetables",
     "id": "32",
     "image": "https://images.ctfassets.net/l9qj50bqgqik/1HT5eG9u5CqKYiUUWg6Gei/5e90eaff0b0acf75c827f8d25063fcaa/gurke.jpg?bg=transparent\u0026fit=fill\u0026fl=progressive\u0026fm=jpg\u0026h=768\u0026q=80\u0026w=1024",
     "kcal": "100",
-    "name": "Gurke"
-  },
-  {
+    "name": "Gurke",
+    "searchText": "cucumber"
+}, {
+    "category": "spices",
     "id": "33",
     "image": "https://ch.media.oswald-info.com/catalog/product/cache/60008afbf006a5c80c1ee47984ce5cbd/k/a/kalbsbouillon-knoblauch-pd-klassiker-600x600.jpg",
     "kcal": "100",
-    "name": "Kalbsbouillon"
-  },
-  {
+    "name": "Kalbsbouillon",
+    "searchText": "veal bouillon"
+}, {
+    "category": "drinks",
     "id": "34",
     "image": "https://www.vergleiche.ch/wp-content/uploads/compare_plus_manual_feeds/Weisswein.jpg",
     "kcal": "100",
-    "name": "Weisswein"
-  },
-  {
+    "name": "Weisswein",
+    "searchText": "white wine"
+}, {
+    "category": "meat",
     "id": "35",
     "image": "https://www.bell.ch/userfiles/modulesext_bell_meatpieces_Meatpiece/9f5755ff4723929873ab8e0ffa/rind-tafelspitz_big_default.png?t=0_0_2680_2000",
     "kcal": "100",
-    "name": "Rinds Tafelspitz"
-  },
-  {
+    "name": "Rinds Tafelspitz",
+    "searchText": "beef tip"
+}, {
+    "category": "spices",
     "id": "36",
     "image": "https://www.pastaweb.de/wp-content/uploads/2016/02/lorbeerblaetter.jpg",
     "kcal": "100",
-    "name": "Loorbeerblätter"
-  },
-  {
+    "name": "Loorbeerblätter",
+    "searchText": "bay leaves, bay"
+}, {
+    "category": "vegetables",
     "id": "37",
     "image": "https://www.simplyrecipes.com/thmb/2TVhYJowuOnsGPuZA_KEnvGrpTs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Butternut-Apple-Soup-Lead-7-8b463d8d8f4a4b0282d938a7a4e91d0d.jpg",
     "kcal": "100",
-    "name": "Suppengemüse"
-  },
-  {
+    "name": "Suppengemüse",
+    "searchText": "soup vegetables"
+}, {
+    "category": "vegetables",
     "id": "38",
     "image": "https://www.iva.de/sites/default/files/styles/16x9_1440/public/benutzer/uid/magazinbilder/meerrettich_14711746m_istock.jpg?h=b76d0694\u0026itok=qiLtzQl3",
     "kcal": "100",
-    "name": "Meerrettich"
-  },
-  {
+    "name": "Meerrettich",
+    "searchText": "horseradish"
+}, {
+    "category": "meat",
     "id": "39",
-    "image": "https://as1.ftcdn.net/v2/jpg/02/25/56/18/1000_F_225561896_L9onK6YWzgSWk1v2hdzZBwuDNMBOTnaf.jpg",
+    "image": "https://kuenzli.dimaster.io/assets/cache/media/1000/x/media/shop/fleisch/lamm/lamm-krone/lamm-krone.jpg",
     "kcal": "100",
-    "name": "Lammkottlette"
-  },
-  {
+    "name": "Lammkotelett",
+    "searchText": "lamb chop"
+}, {
+    "category": "spices",
     "id": "40",
     "image": "https://www.onlinedrogerie24.ch/wp-content/uploads/2020/05/thymian.jpeg",
     "kcal": "100",
-    "name": "Thymian"
-  },
-  {
+    "name": "Thymian",
+    "searchText": "thyme"
+}, {
+    "category": "spices",
     "id": "41",
     "image": "https://www.mein-schoener-garten.de/sites/default/files/styles/inline_scaled_s/public/schnittlauch-4004204-blp-shutterstock.jpg?itok=r5IvIlKZ",
     "kcal": "100",
-    "name": "Schnittlauch"
-  },
-  {
+    "name": "Schnittlauch",
+    "searchText": "chives"
+}, {
+    "category": "spices",
     "id": "42",
     "image": "https://ungarnshop.at/wp-content/uploads/paprikapulver.jpg",
     "kcal": "100",
-    "name": "Paprikapulver"
-  },
-  {
+    "name": "Paprikapulver",
+    "searchText": "paprika powder"
+}, {
+    "category": "vegetables",
     "id": "43",
     "image": "https://shop.rohners-hofladen.ch/media/image/e7/35/38/peperoni-block-mix.jpg",
     "kcal": "100",
-    "name": "Peperoni"
-  },
-  {
+    "name": "Peperoni",
+    "searchText": "bell pepper"
+}, {
+    "category": "meat",
     "id": "44",
-    "image": "https://previews.123rf.com/images/topntp/topntp1905/topntp190500281/121867275-fresh-raw-pork-ribs-isolated-on-white-background.jpg",
+    "image": "https://www.coop.ch/img/produkte/737_737/RGB/5898259_001.jpg?_=1657111762524",
     "kcal": "100",
-    "name": "Spareribs"
-  },
-  {
+    "name": "Spareribs",
+    "searchText": "spareribs, ribs"
+}, {
+    "category": "miscellaneous",
     "id": "45",
     "image": "https://www.coop.ch/img/produkte/737_737/RGB/3020563_001.jpg?_=1581360585397",
     "kcal": "100",
-    "name": "Apfelessig"
-  },
-  {
+    "name": "Apfelessig",
+    "searchText": "apple vinegar, apple cider vinegar"
+}, {
+    "category": "spices",
     "id": "46",
     "image": "https://ais.kochbar.de/kbrezept/366852_1010220/1200x1200/tomatensosse-aus-tomatenmark-rezept-bild-nr-2.jpg",
     "kcal": "100",
-    "name": "Tommatenmark"
-  },
-  {
+    "name": "Tomatenmark",
+    "searchText": "tomato paste"
+}, {
+    "category": "fruit",
     "id": "47",
-    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8a/Banana-Single.jpg",
+    "image": "https://i5.walmartimages.com/asr/5939a6fa-a0d6-431c-88c6-b4f21608e4be.f7cd0cc487761d74c69b7731493c1581.jpeg",
+    "kcal": "100",
+    "name": "Banane",
+    "searchText": "banana"
+}, {
+    "category": "vegetables",
+    "id": "48",
+    "image": "https://www.farmersmarkt.ch/wp-content/uploads/2020/04/kopfsalat-gruen.jpg",
+    "kcal": "100",
+    "name": "Kopfsalat grün",
+    "searchText": "green salad, green lettuce, hed lettuce green"
+}, {
+    "category": "vegetables",
+    "id": "49",
+    "image": "https://www.weigelt-es.de/media/image/70/ea/f9/5720_Kopfsalat-Pirat-AdobeStock_60988508.jpg",
+    "kcal": "100",
+    "name": "Kopfsalat rot",
+    "searchText": "red salad, red lettuce, head lettuce red"
+}, {
+    "category": "vegetables",
+    "id": "50",
+    "image": "https://www.ndr.de/ratgeber/kochen/warenkunde/warenkunde148_v-contentgross.jpg",
+    "kcal": "100",
+    "name": "Nüsslisalat",
+    "searchText": "Lamb's lettuce"
+}, {
+    "category": "fruit",
+    "id": "51",
+    "image": "https://i.ytimg.com/vi/qU4PksY10pM/maxresdefault.jpg",
     "kcal": "100",
     "name": "Banana"
   },
