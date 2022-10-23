@@ -1,6 +1,8 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 
+const atobPolyfill = (a: any) => Buffer.from(a, "base64").toString("binary");
+
 import vision from "@google-cloud/vision";
 
 const client: any = new vision.ImageAnnotatorClient({
@@ -13,7 +15,7 @@ const client: any = new vision.ImageAnnotatorClient({
 const dataURLtoBlob = (dataurl: string) => {
   let arr = dataurl.split(","),
     mime = (arr as any)[0].match(/:(.*?);/)[1],
-    bstr = atob(arr[1]),
+    bstr = atobPolyfill(arr[1]),
     n = bstr.length,
     u8arr = new Uint8Array(n);
   while (n--) {
