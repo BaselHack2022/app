@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import { Blob } from "buffer";
 
 const atobPolyfill = (a: any) => Buffer.from(a, "base64").toString("binary");
 
